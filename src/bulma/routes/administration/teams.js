@@ -1,4 +1,4 @@
-const TeamsIndex = () => import('../pages/teams/Index.vue');
+const TeamsIndex = () => import('../../pages/teams/Index.vue');
 
 export default {
     name: 'administration.teams.index',

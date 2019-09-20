@@ -1,10 +1,10 @@
 # Teams
 
-![npm license](https://img.shields.io/npm/l/@enso-ui/progress-bar.svg) 
-![npm download](https://img.shields.io/npm/dm/@enso-ui/progress-bar.svg) 
-![GitHub top language](https://img.shields.io/github/languages/top/enso-ui/progress-bar.svg) 
-![GitHub issues](https://img.shields.io/github/issues/enso-ui/progress-bar.svg) 
-![npm version](https://img.shields.io/npm/v/@enso-ui/progress-bar.svg) 
+![npm license](https://img.shields.io/npm/l/@enso-ui/teams.svg) 
+![npm download](https://img.shields.io/npm/dm/@enso-ui/teams.svg) 
+![GitHub top language](https://img.shields.io/github/languages/top/enso-ui/teams.svg) 
+![GitHub issues](https://img.shields.io/github/issues/enso-ui/teams.svg) 
+![npm version](https://img.shields.io/npm/v/@enso-ui/teams.svg) 
 
 ## Usage
 The component cannot be used outside of the Enso ecosystem.
@@ -19,7 +19,7 @@ Check the full documentation at  [docs.laravel-enso.com](https://docs.laravel-en
 
 Install the package:
 ```
-npm i @enso-ui/teams
+yarn add @enso-ui/teams
 ```
 
 ## Contributions

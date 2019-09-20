@@ -1,0 +1,44 @@
+{
+  "name": "@enso-ui/teams",
+  "version": "1.0.0",
+  "description": "Basic teams package",
+  "main": "src/bulma/pages/teams/Index.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enso-ui/teams.git"
+  },
+  "keywords": [
+    "teams",
+    "vue"
+  ],
+  "author": "Adrian Ocneanu <aocneanu@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enso-ui/teams/issues"
+  },
+  "homepage": "https://github.com/enso-ui/teams#readme",
+  "devDependencies": {
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.1.6",
+    "eslint": "^5.0.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "laravel-mix": "3.0.0",
+    "node-sass": "^4.11.0",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "@enso-ui/forms": "~1.2.0",
+    "@enso-ui/tables": "~1.1.0",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@enso-ui/directives": "~1.0.1",
+    "@enso-ui/transitions": "~1.0.1",
+    "@enso-ui/bulma": "~1.2.0",
+    "v-tooltip": "^2.0.0-rc.32",
+    "vue": "^2.5.16"
+  }
+}

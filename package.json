@@ -1,6 +1,6 @@
 {
   "name": "@enso-ui/teams",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Basic teams package",
   "main": "src/bulma/pages/teams/Index.vue",
   "scripts": {

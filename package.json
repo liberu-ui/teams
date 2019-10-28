@@ -1,6 +1,6 @@
 {
   "name": "@enso-ui/teams",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Basic teams package",
   "main": "src/bulma/pages/teams/Index.vue",
   "scripts": {
@@ -31,13 +31,14 @@
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
-    "@enso-ui/forms": "~1.2.2",
-    "@enso-ui/tables": "~1.1.2",
-    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@enso-ui/directives": "1.0.x",
+    "@enso-ui/forms": "1.2.x",
+    "@enso-ui/tables": "1.2.x",
+    "@enso-ui/select": "1.1.x",
+    "@enso-ui/transitions": "1.0.x",
+    "@enso-ui/ui": "2.1.x",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
-    "@enso-ui/directives": "^1.0.11",
-    "@enso-ui/transitions": "^1.0.13",
-    "@enso-ui/bulma": "^2.0.1",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "v-tooltip": "^2.0.0-rc.32",
     "vue": "^2.5.16"
   }

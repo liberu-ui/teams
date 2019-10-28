@@ -7,20 +7,16 @@
 ![npm version](https://img.shields.io/npm/v/@enso-ui/teams.svg) 
 
 ## Usage
+
 The component cannot be used outside of the Enso ecosystem.
 
 ### Demo
 
 For live examples and demos, you may visit [laravel-enso.com](https://www.laravel-enso.com)
 
-Check the full documentation at  [docs.laravel-enso.com](https://docs.laravel-enso.com).
+### Installation, Configuration & Usage
 
-### Installation
-
-Install the package:
-```
-yarn add @enso-ui/teams
-```
+Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/frontend/accessories.html)
 
 ## Contributions
 

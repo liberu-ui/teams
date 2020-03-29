@@ -9,7 +9,7 @@
             <div class="level is-mobile">
                 <div class="level-left">
                     <div name="left"
-                        class="level-item">
+                        class="level-item has-margin-left-small">
                         <label class="label">
                             <input class="input team-name"
                                 v-model="team.name"

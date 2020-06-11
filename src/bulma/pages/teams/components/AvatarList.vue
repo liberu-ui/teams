@@ -6,7 +6,7 @@
             :key="user.id"
             v-tooltip="user.name">
             <img class="is-rounded"
-                :src="route('core.avatars.show', user.avatarId)">
+                :src="route('core.avatars.show', user.avatar.id)">
         </figure>
     </div>
 </template>

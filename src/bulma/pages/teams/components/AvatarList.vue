@@ -1,23 +1,24 @@
 <template>
     <div class="is-flex avatar-list">
-        <figure class="image has-margin-right-small has-margin-bottom-small"
+        <avatar class="image has-margin-right-small has-margin-bottom-small"
             :class="isSmall ? 'is-24x24' : 'is-32x32'"
             v-for="user in users"
             :key="user.id"
-            v-tooltip="user.name">
-            <img class="is-rounded"
-                :src="route('core.avatars.show', user.avatar.id)">
-        </figure>
+            v-tooltip="user.name"
+            :user="user"/>
     </div>
 </template>
 
 <script>
 import { VTooltip } from 'v-tooltip';
+import Avatar from '@enso-ui/ui/src/bulma/pages/administration/users/components/Avatar.vue';
 
 export default {
     name: 'AvatarList',
 
     directives: { tooltip: VTooltip },
+
+    components: { Avatar },
 
     inject: ['route'],
 
@@ -39,7 +40,8 @@ export default {
         margin-left: 1em;
         flex-flow: wrap;
 
-        figure {
+        figure.avatar {
+            margin: unset;
             transition: margin 0.2s;
             -webkit-transition: margin 0.2s;
             transition: transform .2s;

@@ -96,7 +96,7 @@ library.add([faBan, faPencilAlt, faTrash, faCheck]);
 export default {
     name: 'Team',
 
-    inject: ['errorHandler', 'i18n', 'route'],
+    inject: ['errorHandler', 'i18n', 'route', toastr'],
 
     directives: { focus },
 
@@ -120,14 +120,14 @@ export default {
             axios.post(this.route('administration.teams.store'), this.team)
                 .then(({ data }) => {
                     this.loading = false;
-                    this.$toastr.success(data.message);
+                    this.toastr.success(data.message);
                     this.team.users = data.team.users;
                     this.team.id = data.team.id;
                     this.team.edit = false;
                     this.$emit('create', this.team);
                 }).catch((error) => {
                     if (error.response.status === 422) {
-                        this.$toastr.warning(this.i18n('Choose another name'));
+                        this.toastr.warning(this.i18n('Choose another name'));
                         return;
                     }
                     this.errorHandler(error);
@@ -139,7 +139,7 @@ export default {
             axios.delete(this.route('administration.teams.destroy', this.team.id))
                 .then(({ data }) => {
                     this.loading = false;
-                    this.$toastr.success(data.message);
+                    this.toastr.success(data.message);
                     this.team.edit = false;
                     this.$emit('destroy');
                 }).catch(this.errorHandler);

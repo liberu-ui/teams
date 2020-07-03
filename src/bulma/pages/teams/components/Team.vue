@@ -96,7 +96,7 @@ library.add([faBan, faPencilAlt, faTrash, faCheck]);
 export default {
     name: 'Team',
 
-    inject: ['errorHandler', 'i18n', 'route', toastr'],
+    inject: ['errorHandler', 'i18n', 'route', 'toastr'],
 
     directives: { focus },
 

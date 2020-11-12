@@ -22,8 +22,6 @@
   "homepage": "https://github.com/enso-ui/teams#readme",
   "dependencies": {
     "@enso-ui/directives": "^1.0",
-    "@enso-ui/forms": "^2.0",
-    "@enso-ui/tables": "^2.0",
     "@enso-ui/select": "^2.0",
     "@enso-ui/transitions": "^1.0",
     "@enso-ui/ui": "^4.0",

@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div v-if="ready">
-            <button class="button is-success has-margin-bottom-large"
+            <button class="button is-success mb-3"
                 @click="team=factory()"
                 :disabled="team">
                 <span class="icon is-small">
@@ -30,7 +30,7 @@
         <h4 class="title is-4 has-text-centered"
             v-if="!ready && loading">
             {{ i18n('Loading') }}
-            <span class="icon is-small has-margin-left-medium">
+            <span class="icon is-small ml-2">
                 <fa icon="spinner"
                     size="xs"
                     spin/>

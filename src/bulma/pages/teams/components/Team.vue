@@ -5,11 +5,11 @@
             { 'is-warning': team.edit && team.id },
             { 'is-info': !team.edit && team.users.length === 0 },
         ]">
-        <div class="box-header has-padding-medium has-background-light">
+        <div class="box-header p-2 has-background-light">
             <div class="level is-mobile">
                 <div class="level-left">
                     <div name="left"
-                        class="level-item has-margin-left-small">
+                        class="level-item ml-1">
                         <label class="label">
                             <input class="input team-name"
                                 v-model="team.name"
@@ -59,14 +59,14 @@
                 </div>
             </div>
         </div>
-        <div class="box-body has-padding-medium">
+        <div class="box-body p-2">
             <avatar-list :users="team.users"/>
             <span v-if="!team.edit && !loading && team.users.length === 0"
-                class="has-text-muted is-italic has-margin-bottom-small">
+                class="has-text-muted is-italic mb-1">
                 {{ i18n('No users yet') }}
             </span>
             <fade>
-                <div class="has-margin-bottom-large has-margin-top-large"
+                <div class="mb-3 mt-3"
                     v-if="team.edit && team.name">
                     <label class="label">
                         {{ i18n('Members') }}:

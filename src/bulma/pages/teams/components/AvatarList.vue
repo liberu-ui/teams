@@ -1,6 +1,6 @@
 <template>
     <div class="is-flex avatar-list">
-        <avatar class="image has-margin-right-small has-margin-bottom-small"
+        <avatar class="image mr-1 mb-1"
             :class="isSmall ? 'is-24x24' : 'is-32x32'"
             v-for="user in users"
             :key="user.id"

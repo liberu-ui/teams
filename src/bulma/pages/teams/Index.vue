@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlus, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Team from './components/Team.vue';
@@ -71,7 +72,7 @@ export default {
 
     inject: ['errorHandler', 'i18n', 'route'],
 
-    components: { Team },
+    components: { Fa, Team },
 
     data: () => ({
         loading: false,

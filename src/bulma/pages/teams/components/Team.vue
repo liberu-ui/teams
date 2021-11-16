@@ -82,6 +82,7 @@
 </template>
 
 <script>
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faBan, faPencilAlt, faTrash, faCheck,
@@ -100,7 +101,7 @@ export default {
 
     directives: { focus },
 
-    components: { Fade, EnsoSelect, AvatarList },
+    components: { AvatarList, EnsoSelect, Fa, Fade },
 
     props: {
         team: {

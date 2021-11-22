@@ -23,7 +23,7 @@
                 </div>
                 <div class="level-right">
                     <div class="level-item has-text-right">
-                        <a class="button is-naked animated fadeIn"
+                        <a class="button is-naked animate__animated animate__fadeIn"
                             v-if="!team.edit"
                             @click="team.edit = true">
                             <span class="icon">
@@ -31,7 +31,7 @@
                                     size="sm"/>
                             </span>
                         </a>
-                        <span class="animated fadeIn"
+                        <span class="animate__animated animate__fadeIn"
                             v-else>
                             <a class="button is-naked is-outlined"
                                 @click="$emit('cancel');team.edit = false">
@@ -82,6 +82,7 @@
 </template>
 
 <script>
+import 'animate.css';
 import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {

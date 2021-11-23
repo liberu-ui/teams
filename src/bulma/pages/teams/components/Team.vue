@@ -23,38 +23,39 @@
                 </div>
                 <div class="level-right">
                     <div class="level-item has-text-right">
-                        <a class="button is-naked animate__animated animate__fadeIn"
-                            v-if="!team.edit"
-                            @click="team.edit = true">
-                            <span class="icon">
-                                <fa icon="pencil-alt"
-                                    size="sm"/>
-                            </span>
-                        </a>
-                        <span class="animate__animated animate__fadeIn"
-                            v-else>
-                            <a class="button is-naked is-outlined"
-                                @click="$emit('cancel');team.edit = false">
+                        <fade>
+                            <a class="button is-naked"
+                                v-if="!team.edit"
+                                @click="team.edit = true">
                                 <span class="icon">
-                                    <fa icon="ban"/>
-                                </span>
-                            </a>
-                            <a class="button is-naked is-success is-outlined"
-                                :disabled="!team.name"
-                                @click="store();">
-                                <span class="icon">
-                                    <fa icon="check"
+                                    <fa icon="pencil-alt"
                                         size="sm"/>
                                 </span>
                             </a>
-                            <a class="button is-naked is-danger is-outlined"
-                                @click="destroy"
-                                v-if="team.id !== null">
-                                <span class="icon">
-                                    <fa icon="trash"/>
-                                </span>
-                            </a>
-                        </span>
+                            <span v-else>
+                                <a class="button is-naked is-outlined"
+                                    @click="$emit('cancel');team.edit = false">
+                                    <span class="icon">
+                                        <fa icon="ban"/>
+                                    </span>
+                                </a>
+                                <a class="button is-naked is-success is-outlined"
+                                    :disabled="!team.name"
+                                    @click="store();">
+                                    <span class="icon">
+                                        <fa icon="check"
+                                            size="sm"/>
+                                    </span>
+                                </a>
+                                <a class="button is-naked is-danger is-outlined"
+                                    @click="destroy"
+                                    v-if="team.id !== null">
+                                    <span class="icon">
+                                        <fa icon="trash"/>
+                                    </span>
+                                </a>
+                            </span>
+                        </fade>
                     </div>
                 </div>
             </div>
@@ -82,7 +83,6 @@
 </template>
 
 <script>
-import 'animate.css';
 import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {

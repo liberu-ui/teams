@@ -111,6 +111,8 @@ export default {
         },
     },
 
+    emits: ['cancel', 'create', 'destroy'],
+
     data: () => ({
         loading: false,
     }),

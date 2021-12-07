@@ -40,8 +40,8 @@
                                     </span>
                                 </a>
                                 <a class="button is-naked is-success is-outlined"
-                                    :disabled="!team.name"
-                                    @click="store();">
+                                    @click="store();"
+                                    v-if="team.name">
                                     <span class="icon">
                                         <fa icon="check"
                                             size="sm"/>
@@ -49,7 +49,7 @@
                                 </a>
                                 <a class="button is-naked is-danger is-outlined"
                                     @click="destroy"
-                                    v-if="team.id !== null">
+                                    v-if="team.id !== null && team.users.length === 0">
                                     <span class="icon">
                                         <fa icon="trash"/>
                                     </span>

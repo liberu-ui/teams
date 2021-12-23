@@ -70,7 +70,7 @@ library.add(faPlus, faSearch, faSpinner);
 export default {
     name: 'Index',
 
-    inject: ['errorHandler', 'i18n', 'route'],
+    inject: ['errorHandler', 'http', 'i18n', 'route'],
 
     components: { Fa, Team },
 
@@ -99,7 +99,7 @@ export default {
         fetch() {
             this.loading = true;
 
-            axios.get(this.route('administration.teams.index'))
+            this.http.get(this.route('administration.teams.index'))
                 .then(({ data }) => {
                     this.teams = data;
                     this.loading = false;

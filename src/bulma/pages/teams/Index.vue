@@ -44,9 +44,9 @@
                     @create="teams.unshift($event); team = null"/>
             </div>
             <div class="column is-one-third-widescreen is-half-tablet"
-                v-for="(team, index) in filteredTeams"
+                v-for="(filteredTeam, index) in filteredTeams"
                 :key="index">
-                <team :team="team"
+                <team :team="filteredTeam"
                     @destroy="teams.splice(index, 1)"/>
             </div>
             <div class="column"
@@ -70,9 +70,9 @@ library.add(faPlus, faSearch, faSpinner);
 export default {
     name: 'Index',
 
-    inject: ['errorHandler', 'http', 'i18n', 'route'],
-
     components: { Fa, Team },
+
+    inject: ['errorHandler', 'http', 'i18n', 'route'],
 
     data: () => ({
         loading: false,

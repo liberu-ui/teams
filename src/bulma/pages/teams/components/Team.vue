@@ -98,11 +98,13 @@ library.add([faBan, faPencilAlt, faTrash, faCheck]);
 export default {
     name: 'Team',
 
-    inject: ['errorHandler', 'http', 'i18n', 'route', 'toastr'],
-
     directives: { focus },
 
-    components: { AvatarList, EnsoSelect, Fa, Fade },
+    components: {
+        AvatarList, EnsoSelect, Fa, Fade,
+    },
+
+    inject: ['errorHandler', 'http', 'i18n', 'route', 'toastr'],
 
     props: {
         team: {
@@ -129,7 +131,7 @@ export default {
                     this.team.id = data.team.id;
                     this.team.edit = false;
                     this.$emit('create', this.team);
-                }).catch((error) => {
+                }).catch(error => {
                     if (error.response.status === 422) {
                         this.toastr.warning(this.i18n('Choose another name'));
                         return;

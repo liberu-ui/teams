@@ -23,38 +23,39 @@
                 </div>
                 <div class="level-right">
                     <div class="level-item has-text-right">
-                        <a class="button is-naked animated fadeIn"
-                            v-if="!team.edit"
-                            @click="team.edit = true">
-                            <span class="icon">
-                                <fa icon="pencil-alt"
-                                    size="sm"/>
-                            </span>
-                        </a>
-                        <span class="animated fadeIn"
-                            v-else>
-                            <a class="button is-naked is-outlined"
-                                @click="$emit('cancel');team.edit = false">
+                        <fade>
+                            <a class="button is-naked"
+                                v-if="!team.edit"
+                                @click="team.edit = true">
                                 <span class="icon">
-                                    <fa icon="ban"/>
-                                </span>
-                            </a>
-                            <a class="button is-naked is-success is-outlined"
-                                :disabled="!team.name"
-                                @click="store();">
-                                <span class="icon">
-                                    <fa icon="check"
+                                    <fa icon="pencil-alt"
                                         size="sm"/>
                                 </span>
                             </a>
-                            <a class="button is-naked is-danger is-outlined"
-                                @click="destroy"
-                                v-if="team.id !== null">
-                                <span class="icon">
-                                    <fa icon="trash"/>
-                                </span>
-                            </a>
-                        </span>
+                            <span v-else>
+                                <a class="button is-naked is-outlined"
+                                    @click="$emit('cancel');team.edit = false">
+                                    <span class="icon">
+                                        <fa icon="ban"/>
+                                    </span>
+                                </a>
+                                <a class="button is-naked is-success is-outlined"
+                                    @click="store();"
+                                    v-if="team.name">
+                                    <span class="icon">
+                                        <fa icon="check"
+                                            size="sm"/>
+                                    </span>
+                                </a>
+                                <a class="button is-naked is-danger is-outlined"
+                                    @click="destroy"
+                                    v-if="team.id !== null && team.users.length === 0">
+                                    <span class="icon">
+                                        <fa icon="trash"/>
+                                    </span>
+                                </a>
+                            </span>
+                        </fade>
                     </div>
                 </div>
             </div>
@@ -82,6 +83,7 @@
 </template>
 
 <script>
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faBan, faPencilAlt, faTrash, faCheck,
@@ -96,11 +98,13 @@ library.add([faBan, faPencilAlt, faTrash, faCheck]);
 export default {
     name: 'Team',
 
-    inject: ['errorHandler', 'i18n', 'route', 'toastr'],
-
     directives: { focus },
 
-    components: { Fade, EnsoSelect, AvatarList },
+    components: {
+        AvatarList, EnsoSelect, Fa, Fade,
+    },
+
+    inject: ['errorHandler', 'http', 'i18n', 'route', 'toastr'],
 
     props: {
         team: {
@@ -108,6 +112,8 @@ export default {
             required: true,
         },
     },
+
+    emits: ['cancel', 'create', 'destroy'],
 
     data: () => ({
         loading: false,
@@ -117,7 +123,7 @@ export default {
         store() {
             this.loading = true;
 
-            axios.post(this.route('administration.teams.store'), this.team)
+            this.http.post(this.route('administration.teams.store'), this.team)
                 .then(({ data }) => {
                     this.loading = false;
                     this.toastr.success(data.message);
@@ -125,7 +131,7 @@ export default {
                     this.team.id = data.team.id;
                     this.team.edit = false;
                     this.$emit('create', this.team);
-                }).catch((error) => {
+                }).catch(error => {
                     if (error.response.status === 422) {
                         this.toastr.warning(this.i18n('Choose another name'));
                         return;
@@ -136,7 +142,7 @@ export default {
         destroy() {
             this.loading = true;
 
-            axios.delete(this.route('administration.teams.destroy', this.team.id))
+            this.http.delete(this.route('administration.teams.destroy', this.team.id))
                 .then(({ data }) => {
                     this.loading = false;
                     this.toastr.success(data.message);

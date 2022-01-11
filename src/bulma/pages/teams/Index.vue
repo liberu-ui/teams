@@ -44,9 +44,9 @@
                     @create="teams.unshift($event); team = null"/>
             </div>
             <div class="column is-one-third-widescreen is-half-tablet"
-                v-for="(team, index) in filteredTeams"
+                v-for="(filteredTeam, index) in filteredTeams"
                 :key="index">
-                <team :team="team"
+                <team :team="filteredTeam"
                     @destroy="teams.splice(index, 1)"/>
             </div>
             <div class="column"
@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlus, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Team from './components/Team.vue';
@@ -69,9 +70,9 @@ library.add(faPlus, faSearch, faSpinner);
 export default {
     name: 'Index',
 
-    inject: ['errorHandler', 'i18n', 'route'],
+    components: { Fa, Team },
 
-    components: { Team },
+    inject: ['errorHandler', 'http', 'i18n', 'route'],
 
     data: () => ({
         loading: false,
@@ -98,7 +99,7 @@ export default {
         fetch() {
             this.loading = true;
 
-            axios.get(this.route('administration.teams.index'))
+            this.http.get(this.route('administration.teams.index'))
                 .then(({ data }) => {
                     this.teams = data;
                     this.loading = false;

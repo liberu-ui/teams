@@ -1,5 +1,5 @@
 {
-  "name": "@cgdsoftware/teams",
+  "name": "@liberu-ui/teams",
   "version": "5.0.0",
   "description": "Basic teams package",
   "main": "src/bulma/pages/teams/Index.vue",
@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/enso-ui/teams#readme",
   "dependencies": {
-    "@cgdsoftware/directives": "^2.0",
-    "@cgdsoftware/select": "^3.0",
-    "@cgdsoftware/transitions": "^2.0",
-    "@cgdsoftware/ui": "^6.0",
-    "@cgdsoftware/users": "^3.0",
+    "@liberu-ui/directives": "^2.0",
+    "@liberu-ui/select": "^3.0",
+    "@liberu-ui/transitions": "^2.0",
+    "@liberu-ui/ui": "^6.0",
+    "@liberu-ui/users": "^3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/vue-fontawesome": "3.0.0-5",

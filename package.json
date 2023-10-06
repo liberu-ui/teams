@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enso-ui/teams.git"
+    "url": "git+https://github.com/liberu-ui/teams.git"
   },
   "keywords": [
     "teams",
@@ -17,9 +17,9 @@
   "author": "Adrian Ocneanu <aocneanu@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/enso-ui/teams/issues"
+    "url": "https://github.com/liberu-ui/teams/issues"
   },
-  "homepage": "https://github.com/enso-ui/teams#readme",
+  "homepage": "https://github.com/liberu-ui/teams#readme",
   "dependencies": {
     "@liberu-ui/directives": "^2.0",
     "@liberu-ui/select": "^3.0",

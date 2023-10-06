@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Avatar from '@enso-ui/users/src/bulma/pages/users/components/Avatar.vue';
+import Avatar from '@liberu-ui/users/src/bulma/pages/users/components/Avatar.vue';
 
 export default {
     name: 'AvatarList',

@@ -88,9 +88,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faBan, faPencilAlt, faTrash, faCheck,
 } from '@fortawesome/free-solid-svg-icons';
-import { focus } from '@enso-ui/directives';
-import { Fade } from '@enso-ui/transitions';
-import { EnsoSelect } from '@enso-ui/select/bulma';
+import { focus } from '@liberu-ui/directives';
+import { Fade } from '@liberu-ui/transitions';
+import { EnsoSelect } from '@liberu-ui/select/bulma';
 import AvatarList from './AvatarList.vue';
 
 library.add([faBan, faPencilAlt, faTrash, faCheck]);

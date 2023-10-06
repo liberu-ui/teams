@@ -1,6 +1,6 @@
 {
   "name": "@liberu-ui/teams",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "description": "Basic teams package",
   "main": "src/bulma/pages/teams/Index.vue",
   "scripts": {
